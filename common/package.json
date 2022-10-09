@@ -1,0 +1,21 @@
+{
+     "name": "@ticketsagi/common",
+     "version": "1.0.0",
+     "description": "",
+     "main": "./build/index.js",
+     "types": "./build/index.d.ts",
+     "files": [
+          "build/**/*"
+     ],
+     "scripts": {
+          "clean": "del ./build/*",
+          "build": "npm run clean && tsc",
+          "pub": "git add . && git commit -m'change' && npm patch && npm run clean && npm run build && git push"
+     },
+     "keywords": [],
+     "author": "",
+     "license": "ISC",
+     "devDependencies": {
+          "del-cli": "^5.0.0"
+     }
+}
