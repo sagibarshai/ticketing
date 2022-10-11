@@ -1,8 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata: 
+metadata:
   name: client-depl
-spec: 
+spec:
   replicas: 1
   selector:
     matchLabels:
@@ -13,18 +13,18 @@ spec:
         app: client
     spec:
       containers:
-        - name: client
-          image: us.gcr.io/ticketing-dev-364015/client
+      - name: client
+        image: us.gcr.io/ticketing-dev-364015/client
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: client-srv
-spec: 
+spec:
   selector:
     app: client
   ports:
-    - name: client
-      protocol: TCP
-      port: 3000
-      targetPort: 3000
+  - name: client
+    protocol: TCP
+    port: 3000
+    targetPort: 3000
